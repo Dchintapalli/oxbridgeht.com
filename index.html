@@ -1,214 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Oxbridge HT helps ambitious healthtech teams move from promising idea to meaningful market impact." />
-  <title>Oxbridge HT — Healthtech, accelerated</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2ea">
+  <meta name="description" content="Oxbridge HT works across healthtech strategy, innovation and acceleration, with a focus on turning promising ideas into practical progress.">
+  <title>Oxbridge HT | Healthtech innovation, built for impact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#171713;--paper:#f5f2ea;--acid:#d8f36a;--orange:#f27345;--muted:#706e65;--line:rgba(23,23,19,.18);--sans:'DM Sans',Arial,sans-serif;--serif:'Playfair Display',Georgia,serif;--mono:'DM Mono',monospace}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}
+    :root{--ink:#171713;--paper:#f5f2ea;--acid:#d8f36a;--orange:#ac4524;--muted:#55544c;--line:rgba(23,23,19,.22);--sans:'DM Sans',Arial,sans-serif;--serif:'Playfair Display',Georgia,serif;--mono:'DM Mono',monospace}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:5rem}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:clip}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1340px;margin:0 auto;padding:0 5.2%}
-    
-    /* Header */
-    .topbar{display:flex;justify-content:space-between;align-items:center;height:59px;border-bottom:1px solid var(--line)}
-    .logo{font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:8px}
-    .logo-mark{background:var(--acid);width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:4px}
-    .topnav{display:flex;gap:40px}
-    .topnav a{font-size:.95rem;transition:color .2s}
-    .topnav a:hover{color:var(--muted)}
-    .menu-btn{display:none;background:none;border:none;cursor:pointer;font-size:1.5rem}
-    
-    /* Hero */
-    .hero{min-height:calc(100vh - 59px);display:grid;grid-template-columns:1.06fr .94fr;border-bottom:1px solid var(--line);align-items:center}
-    .hero-copy{position:relative;padding:clamp(58px,7vw,100px) 0}
-    .kicker{font-size:.9rem;color:var(--muted);font-weight:500;margin-bottom:28px;text-transform:uppercase;letter-spacing:.8px}
-    .hero h1{margin:0;font-size:clamp(2.8rem,6vw,5.5rem);line-height:.95;font-family:var(--serif);font-weight:600;margin-bottom:24px}
-    .hero h1 em{font-style:italic;color:var(--orange)}
-    .hero p{margin:0;font-size:1.1rem;line-height:1.6;color:var(--muted);max-width:500px}
-    .hero-art{position:relative;min-height:500px}
-    .orb{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--acid),transparent);opacity:.6;right:0;top:20%}
-    
-    /* Statement */
-    .statement{padding:78px 0 88px;display:grid;grid-template-columns:1fr 2fr;gap:40px;border-bottom:1px solid var(--line);align-items:start}
-    .label{font-size:.9rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.8px;margin-bottom:24px}
-    .statement h2{max-width:850px;margin:0;font-size:clamp(2.8rem,5.2vw,5.5rem);line-height:.95;font-family:var(--serif);font-weight:600}
-    .statement h2 em{font-style:italic;color:var(--orange)}
-    
-    /* Services */
-    .services{padding:72px 0 78px;background:var(--ink);color:var(--paper)}
-    .services-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:42px;gap:40px}
-    .services h2{font-size:clamp(3rem,5.6vw,6rem);line-height:.88;font-family:var(--serif);font-weight:600;margin:0}
-    .services h2 em{font-style:italic;color:var(--acid)}
-    .services-desc{font-size:.95rem;line-height:1.7;color:rgba(245,242,234,.75);max-width:380px}
-    .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
-    .service-item{padding:32px;border:1px solid rgba(245,242,234,.2);border-radius:6px}
-    .service-item h3{margin:0 0 12px;font-size:1.3rem;font-weight:600}
-    .service-item p{margin:0;font-size:.95rem;line-height:1.7;color:rgba(245,242,234,.75)}
-    
-    /* Approach */
-    .approach{padding:76px 0 82px}
-    .approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:start}
-    .approach h2{margin:0 0 28px;font-size:clamp(3rem,5.6vw,6rem);line-height:.88;font-family:var(--serif);font-weight:600}
-    .approach h2 em{font-style:italic;color:var(--orange)}
-    .approach-copy{display:flex;flex-direction:column;gap:24px}
-    .approach-copy p{margin:0;font-size:1rem;line-height:1.7;color:var(--muted)}
-    
-    /* Contact */
-    .contact{background:var(--acid);padding:72px 0 82px}
-    .contact-grid{display:grid;grid-template-columns:1fr minmax(320px,520px);gap:10%;align-items:start}
-    .contact h2{margin:0 0 20px;max-width:650px;font-size:clamp(2.8rem,5.2vw,5.5rem);line-height:.95;font-family:var(--serif);font-weight:600;color:var(--ink)}
-    .contact h2 em{font-style:italic;color:var(--orange)}
-    .contact p{margin:0 0 28px;font-size:.95rem;line-height:1.7;color:rgba(23,23,19,.7);max-width:420px}
-    .contact-form{display:flex;flex-direction:column;gap:16px}
-    .form-group{display:flex;flex-direction:column;gap:6px}
-    .form-group label{font-size:.85rem;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:.5px}
-    .form-group input,.form-group textarea{padding:12px 16px;border:1px solid rgba(23,23,19,.2);border-radius:4px;font-family:var(--sans);font-size:.95rem;background:rgba(255,255,255,.5);color:var(--ink)}
-    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--ink);background:white}
-    .form-group textarea{resize:vertical;min-height:100px}
-    .submit-btn{padding:14px 32px;background:var(--ink);color:var(--paper);border:none;border-radius:4px;font-weight:600;font-size:.95rem;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;transition:background .2s}
-    .submit-btn:hover{background:var(--muted)}
-    
-    /* Footer */
-    footer{border-top:1px solid var(--line);padding:32px 0}
-    .footer-row{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--muted)}
-    
-    @media(max-width:800px){
-      .wrap{padding:0 20px}
-      .topnav{display:none}
-      .menu-btn{display:block}
-      .hero{display:block}
-      .hero-copy{padding:58px 0 72px}
-      .hero-art{min-height:360px;margin:0 -20px}
-      .orb{left:12%;right:auto;width:240px;height:240px}
-      .statement{grid-template-columns:1fr;gap:20px}
-      .services-grid{grid-template-columns:1fr}
-      .approach-grid{grid-template-columns:1fr;gap:20px}
-      .contact-grid{grid-template-columns:1fr;gap:20px}
-      .footer-row{flex-direction:column;gap:12px;text-align:center}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    :focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+    ::selection{background:var(--acid);color:var(--ink)}
+    .skip{position:absolute;top:-5rem;left:1rem;z-index:100;padding:.8rem 1rem;background:var(--acid)}
+    .skip:focus{top:1rem}
+    .wrap{width:min(100% - 2.5rem,82rem);margin-inline:auto}
+    .eyebrow{font:500 .75rem/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+    .section-pad{padding-block:clamp(4.5rem,9vw,8rem)}
+    .section-title{font:600 clamp(2.65rem,6vw,5.6rem)/1.03 var(--serif);letter-spacing:-.035em;margin:0}
+    .section-title em{font-weight:500;color:var(--orange)}
+    .button{min-height:3.25rem;display:inline-flex;align-items:center;justify-content:center;gap:1.4rem;padding:.85rem 1.2rem;background:var(--ink);color:var(--paper);font-weight:700;border:1px solid var(--ink);border-radius:2px;transition:transform .2s,background .2s,color .2s}
+    .button:hover{transform:translateY(-2px);background:transparent;color:var(--ink)}
+    .text-link{display:inline-flex;min-height:2.75rem;align-items:center;gap:.8rem;border-bottom:1px solid currentColor;font-weight:700}
+    .text-link:hover{gap:1.1rem}
+    .site-header{position:relative;z-index:20;border-bottom:1px solid var(--line);background:var(--paper)}
+    .header-inner{min-height:4.75rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+    .logo{display:inline-flex;align-items:center;gap:.65rem;font-weight:700;font-size:1.05rem;white-space:nowrap}
+    .logo-mark{display:grid;place-items:center;width:2rem;height:2rem;background:var(--acid);border-radius:2px;font-family:var(--serif);font-size:1.2rem}
+    .nav{display:flex;align-items:center;gap:clamp(1rem,2.5vw,2.5rem)}
+    .nav a{min-height:2.75rem;display:inline-flex;align-items:center;font-size:.88rem;font-weight:600}
+    .nav a:hover{color:var(--orange)}
+    .nav .nav-cta{background:var(--ink);color:var(--paper);padding:.2rem 1rem;border-radius:2px}
+    .nav .nav-cta:hover{background:var(--orange);color:#fff}
+    .menu-button{display:none;min-width:2.75rem;min-height:2.75rem;align-items:center;justify-content:center;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:1.4rem}
+    .hero{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);min-height:min(46rem,calc(100svh - 4.75rem));border-bottom:1px solid var(--line)}
+    .hero-copy{padding-block:clamp(5rem,10vw,9rem);padding-right:clamp(1rem,4vw,4rem);align-self:center}
+    .hero h1{max-width:12ch;margin:1.7rem 0;font:600 clamp(3.6rem,7.5vw,7.6rem)/.99 var(--serif);letter-spacing:-.055em}
+    .hero h1 em{font-weight:500;color:var(--orange)}
+    .hero-lede{max-width:33rem;margin:0 0 2rem;color:var(--muted);font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.65}
+    .hero-visual{position:relative;isolation:isolate;min-height:27rem;overflow:hidden;background:#eae7dd;border-left:1px solid var(--line)}
+    .visual-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(23,23,19,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(23,23,19,.08) 1px,transparent 1px);background-size:3.2rem 3.2rem}
+    .visual-disc{position:absolute;width:min(72%,25rem);aspect-ratio:1;left:50%;top:48%;transform:translate(-50%,-50%);border-radius:50%;background:var(--acid);box-shadow:0 0 0 2.1rem rgba(216,243,106,.32),0 0 0 4.3rem rgba(216,243,106,.16)}
+    .visual-disc::before,.visual-disc::after{content:"";position:absolute;inset:19%;border:1px solid rgba(23,23,19,.35);border-radius:50%}
+    .visual-disc::after{inset:38%;background:var(--ink)}
+    .visual-label{position:absolute;z-index:1;left:clamp(1.2rem,4vw,3rem);bottom:clamp(1.2rem,4vw,3rem);max-width:15rem;padding:.7rem .85rem;background:var(--paper);font:500 .73rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.05em}
+    .intro{display:grid;grid-template-columns:1fr 2fr;gap:clamp(2rem,6vw,6rem);border-bottom:1px solid var(--line)}
+    .intro p{max-width:45rem;margin:0;font:500 clamp(1.75rem,3.2vw,3.5rem)/1.25 var(--serif);letter-spacing:-.025em}
+    .intro em{color:var(--orange)}
+    .services{background:var(--ink);color:var(--paper)}
+    .services .eyebrow,.services .section-note{color:#c8c6ba}
+    .services .section-title em{color:var(--acid)}
+    .section-heading{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3rem}
+    .section-heading .eyebrow{display:block;margin-bottom:1.3rem}
+    .section-note{max-width:22rem;margin:0;line-height:1.7}
+    .service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(245,242,234,.28);border:1px solid rgba(245,242,234,.28)}
+    .service{min-width:0;min-height:15rem;padding:clamp(1.5rem,3vw,2.5rem);background:var(--ink);display:flex;flex-direction:column}
+    .service-num{color:var(--acid);font:500 .75rem var(--mono)}
+    .service h3{font:500 clamp(1.55rem,2.3vw,2rem)/1.2 var(--serif);margin:2rem 0 .75rem}
+    .service p{max-width:31rem;color:#d3d0c6;line-height:1.65;margin:0}
+    .project{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,7vw,7rem);align-items:center}
+    .project-visual{min-height:22rem;aspect-ratio:1.13;display:grid;place-items:center;position:relative;overflow:hidden;background:#e5e2d7;border:1px solid var(--line)}
+    .project-visual::before{content:"";position:absolute;width:75%;aspect-ratio:1;border:2px solid var(--ink);border-radius:50%;box-shadow:0 0 0 2.4rem var(--acid),0 0 0 2.55rem var(--ink)}
+    .project-visual::after{content:"";position:absolute;width:23%;aspect-ratio:1;border-radius:50%;background:var(--orange)}
+    .project-visual span{position:absolute;z-index:1;bottom:1rem;left:1rem;padding:.5rem .7rem;background:var(--paper);font:500 .72rem var(--mono)}
+    .project-copy .eyebrow{display:block;margin-bottom:1.5rem}
+    .project-copy p,.about-copy p{max-width:33rem;color:var(--muted);line-height:1.75;font-size:1.05rem}
+    .project-copy .text-link{margin-top:1rem}
+    .about{background:#eae7dc}
+    .about-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,8vw,8rem)}
+    .about .eyebrow{display:block;margin-bottom:1.5rem}
+    .about-copy p:first-child{margin-top:0}
+    .about-copy .text-link{margin-top:.6rem}
+    .contact{background:var(--acid)}
+    .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(2.5rem,8vw,8rem)}
+    .contact .eyebrow{display:block;margin-bottom:1.5rem}
+    .contact p{max-width:29rem;line-height:1.7}
+    .contact-form{display:grid;gap:1rem}
+    .field{display:grid;gap:.4rem}
+    .field label{font-size:.84rem;font-weight:700}
+    .field input,.field textarea{width:100%;min-height:3rem;padding:.75rem .9rem;border:1px solid #6a713a;border-radius:2px;background:#fff;color:var(--ink)}
+    .field textarea{min-height:8rem;resize:vertical}
+    .field input:focus,.field textarea:focus{outline:3px solid var(--ink);outline-offset:2px}
+    .contact-form .button{justify-self:start}
+    .form-note{font-size:.8rem;margin:0}
+    .footer{border-top:1px solid var(--line)}
+    .footer-inner{min-height:5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.85rem}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr 1fr;min-height:38rem}
+      .hero h1{font-size:clamp(3rem,6vw,5rem)}
+      .hero-visual{min-height:25rem}
+      .contact-grid{gap:2.5rem}
     }
+    @media(max-width:700px){
+      .wrap{width:min(100% - 2rem,82rem)}
+      .header-inner{min-height:4.25rem}
+      .menu-button{display:inline-flex}
+      .nav{display:none;position:absolute;top:100%;left:0;right:0;padding:1rem;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 1rem 2rem rgba(23,23,19,.12);flex-direction:column;align-items:stretch;gap:0}
+      .nav.is-open{display:flex}
+      .nav a{min-height:3.25rem;padding:0 .8rem}
+      .nav .nav-cta{justify-content:center;margin-top:.6rem}
+      .hero{display:flex;flex-direction:column;min-height:0}
+      .hero-copy{padding:4.5rem 0 3.5rem}
+      .hero h1{max-width:11ch;font-size:clamp(3.25rem,11vw,5.5rem)}
+      .hero-visual{min-height:19rem;margin-inline:-1rem;border-left:0;border-top:1px solid var(--line)}
+      .visual-disc{width:13rem}
+      .intro,.project,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .section-heading{display:block}
+      .section-heading .section-note{margin-top:1.5rem}
+      .project-visual{min-height:18rem;aspect-ratio:1.35}
+      .project-copy{order:-1}
+    }
+    @media(max-width:540px){
+      .section-pad{padding-block:4.25rem}
+      .section-title{font-size:clamp(2.6rem,11vw,4rem)}
+      .service-grid{grid-template-columns:1fr}
+      .service{min-height:0;padding:1.6rem}
+      .service h3{margin:1.6rem 0 .6rem}
+      .footer-inner{flex-direction:column;justify-content:center;text-align:center;padding-block:1.2rem}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
   </style>
 </head>
 <body>
-  <header class="wrap topbar">
-    <a class="logo" href="#top">
-      <span class="logo-mark">O</span> Oxbridge HT
-    </a>
-    <nav class="topnav">
-      <a href="#services">What we do</a>
-      <a href="#approach">Our approach</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="menu-btn">☰</button>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#top" aria-label="Oxbridge HT, home"><span class="logo-mark" aria-hidden="true">O</span>Oxbridge HT</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span aria-hidden="true">☰</span></button>
+      <nav class="nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#services">What we do</a>
+        <a href="#project">Our project</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
-
-  <main id="top">
-    <!-- Hero Section -->
-    <section class="wrap hero">
+  <main id="main">
+    <section class="wrap hero" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="kicker">Healthtech strategy / acceleration / access</div>
-        <h1>Better health.<br><em>Built to scale.</em></h1>
-        <p>Oxbridge HT helps ambitious healthtech teams move from promising idea to meaningful market impact.</p>
+        <span class="eyebrow">Healthtech strategy · innovation · acceleration</span>
+        <h1 id="hero-title">Better health.<br><em>Built with purpose.</em></h1>
+        <p class="hero-lede">Oxbridge HT helps healthtech founders and innovation teams turn promising ideas into practical plans for development and adoption.</p>
+        <a class="button" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="hero-art">
-        <div class="orb"></div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-grid"></div><div class="visual-disc"></div>
+        <span class="visual-label">From idea to real-world use / Oxbridge HT</span>
       </div>
     </section>
-
-    <!-- Statement Section -->
-    <section class="wrap statement" id="approach">
-      <div class="label">01 — The big picture</div>
-      <h2>We bridge the gap between <em>great science</em> and meaningful market impact.</h2>
+    <section class="wrap intro section-pad" aria-labelledby="intro-title">
+      <span class="eyebrow">The thinking behind the work</span>
+      <p id="intro-title">Healthtech doesn't succeed on technology alone. It takes <em>sound evidence, thoughtful design</em> and a clear understanding of how care works.</p>
     </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services section-pad" id="services" aria-labelledby="services-title">
       <div class="wrap">
-        <div class="services-head">
-          <div>
-            <div class="label">02 — What we do</div>
-            <h2>From insight<br>to <em>impact.</em></h2>
-          </div>
-          <p class="services-desc">We work with founders and innovation teams across the health and life sciences ecosystem.</p>
+        <div class="section-heading">
+          <div><span class="eyebrow">01 / What we do</span><h2 class="section-title" id="services-title">From insight<br>to <em>impact.</em></h2></div>
+          <p class="section-note">Support for people building health technologies and programmes that need to work beyond the pitch deck.</p>
         </div>
-        <div class="services-grid">
-          <div class="service-item">
-            <h3>Strategy</h3>
-            <p>Navigate complex health systems and identify pathways to market with clarity and confidence.</p>
-          </div>
-          <div class="service-item">
-            <h3>Acceleration</h3>
-            <p>Scale from proof of concept to commercial impact with the right partnerships and expertise.</p>
-          </div>
-          <div class="service-item">
-            <h3>Access</h3>
-            <p>Unlock doors to NHS, private health, and enterprise partnerships that drive adoption.</p>
-          </div>
-          <div class="service-item">
-            <h3>Fundraising</h3>
-            <p>Secure funding from health-focused investors who understand your market and mission.</p>
-          </div>
+        <div class="service-grid">
+          <article class="service"><span class="service-num">01 / Strategy</span><h3>Find the right direction.</h3><p>Clarify the problem, the people you need to serve and the decisions that matter most.</p></article>
+          <article class="service"><span class="service-num">02 / Acceleration</span><h3>Move ideas forward.</h3><p>Shape development priorities, innovation programmes and practical next steps for growth.</p></article>
+          <article class="service"><span class="service-num">03 / Adoption</span><h3>Design for real-world care.</h3><p>Consider the evidence, stakeholders and delivery context needed to make innovation useful.</p></article>
+          <article class="service"><span class="service-num">04 / Commercial readiness</span><h3>Build a stronger proposition.</h3><p>Make the value of your work clearer to potential partners, supporters and customers.</p></article>
         </div>
       </div>
     </section>
-
-    <!-- Approach Section -->
-    <section class="wrap approach">
-      <div class="approach-grid">
-        <div>
-          <div class="label">03 — Why Oxbridge HT</div>
-          <h2>Different<br>by <em>design.</em></h2>
-        </div>
-        <div class="approach-copy">
-          <p>Healthtech is complex. It requires deep domain expertise, strategic thinking, and operational excellence.</p>
-          <p>We've built an operating system that brings these together—combining strategy, execution, and access to accelerate your impact.</p>
-          <p>Whether you're scaling a digital health platform, launching a medtech device, or building enterprise health infrastructure, we help you move faster with fewer mistakes.</p>
+    <section class="wrap project section-pad" id="project" aria-labelledby="project-title">
+      <div class="project-visual" role="img" aria-label="Abstract concentric-circle illustration representing optical sensing"><span>Oxbridge HT / In development</span></div>
+      <div class="project-copy">
+        <span class="eyebrow">02 / What we're building</span>
+        <h2 class="section-title" id="project-title">Equity, by <em>design.</em></h2>
+        <p>At Oxbridge HT, we're developing an equitable pulse-oximetry concept that explores how optical sensing and device design can better account for variation in skin tone.</p>
+        <p>The project reflects our wider approach: begin with a meaningful care problem, examine the engineering and evidence challenges, and build with real-world use in mind.</p>
+        <a class="text-link" href="#contact">Ask us about the project <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="about section-pad" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div><span class="eyebrow">03 / About Oxbridge HT</span><h2 class="section-title" id="about-title">Built at the intersection of <em>care and engineering.</em></h2></div>
+        <div class="about-copy">
+          <p>Oxbridge HT is led by a founder with a background in electronics and communication engineering, an MBA and Healthcare Innovation study at the University of Cambridge.</p>
+          <p>The founder's experience spans NHS England, healthtech accelerator delivery and hands-on work developing an equitable pulse-oximetry concept. That mix of systems thinking and technical curiosity shapes how we approach new challenges.</p>
+          <a class="text-link" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-grid">
-        <div>
-          <div class="label">04 — Contact</div>
-          <h2>Let's move the right healthtech ideas <em>further, faster.</em></h2>
-          <p>Get in touch with our team to discuss your vision, explore partnership opportunities, or learn how we can accelerate your healthtech journey.</p>
-        </div>
+        <div><span class="eyebrow">04 / Get in touch</span><h2 class="section-title" id="contact-title">Let's build what's <em>next.</em></h2><p>Tell us what you're working on, what you're trying to solve and where you could use support. We'll take it from there.</p></div>
         <form class="contact-form" action="https://formspree.io/f/mnpnzlrl" method="POST">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company">
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Message</button>
+          <div class="field"><label for="name">Name *</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="company">Organisation</label><input id="company" name="company" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="message">What are you working on? *</label><textarea id="message" name="message" required></textarea></div>
+          <button class="button" type="submit">Send enquiry <span aria-hidden="true">↗</span></button>
+          <p class="form-note">Please don't include patient or confidential information.</p>
         </form>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <span>© 2026 Oxbridge HT</span>
-      <span>Healthtech, accelerated — London · Global</span>
-    </div>
-  </footer>
+  <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year">2026</span> Oxbridge HT</span><span>Healthtech innovation, built for impact.</span></div></footer>
+  <script>
+    const menuButton=document.querySelector('.menu-button');
+    const nav=document.querySelector('#primary-nav');
+    function closeMenu(){nav.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open menu');menuButton.querySelector('span').textContent='☰'}
+    menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';if(open){closeMenu()}else{nav.classList.add('is-open');menuButton.setAttribute('aria-expanded','true');menuButton.setAttribute('aria-label','Close menu');menuButton.querySelector('span').textContent='×'}});
+    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
+    window.matchMedia('(min-width:701px)').addEventListener('change',event=>{if(event.matches)closeMenu()});
+    document.querySelector('#year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
