@@ -10,24 +10,205 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <style>
     :root{--ink:#171713;--paper:#f5f2ea;--acid:#d8f36a;--orange:#f27345;--muted:#706e65;--line:rgba(23,23,19,.18);--sans:'DM Sans',Arial,sans-serif;--serif:'Playfair Display',Georgia,serif;--mono:'DM Mono',monospace}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}a{color:inherit;text-decoration:none}.wrap{max-width:1340px;margin:auto;padding:0 42px}.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font:12px var(--mono);text-transform:uppercase;letter-spacing:.08em}.logo{display:flex;align-items:center;gap:10px;font-weight:500;letter-spacing:.04em}.logo-mark{width:27px;height:27px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font:18px var(--serif)}.topnav{display:flex;gap:28px}.topnav a:hover{text-decoration:underline;text-underline-offset:4px}.menu-btn{display:none;border:0;background:none;font:inherit;text-transform:uppercase}
-    .hero{min-height:calc(100vh - 59px);display:grid;grid-template-columns:1.06fr .94fr;border-bottom:1px solid var(--line)}.hero-copy{position:relative;padding:clamp(58px,7vw,100px) 7% 55px 0}.kicker,.label{font:11px var(--mono);text-transform:uppercase;letter-spacing:.1em}.kicker{margin-bottom:27px}h1{margin:0;max-width:760px;font-size:clamp(4rem,8vw,8.4rem);letter-spacing:-.075em;line-height:.87;font-weight:500}h1 em,h2 em{font-family:var(--serif);font-weight:500;letter-spacing:-.06em}.hero-copy p{max-width:410px;margin:32px 0 0;font-size:17px;line-height:1.45}.scroll{position:absolute;bottom:22px;left:0;font:10px var(--mono);text-transform:uppercase;letter-spacing:.08em}.hero-art{position:relative;overflow:hidden;background:var(--orange);min-height:480px;background-image:linear-gradient(rgba(23,23,19,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(23,23,19,.12) 1px,transparent 1px);background-size:42px 42px}.orb{position:absolute;width:clamp(270px,32vw,500px);aspect-ratio:1;border-radius:50%;background:var(--acid);left:9%;top:15%;box-shadow:inset -38px -24px 0 rgba(0,0,0,.07),12px 18px 0 rgba(23,23,19,.12)}.orb:before{content:'';position:absolute;width:60%;height:60%;border:1px solid var(--ink);border-radius:50%;top:20%;left:20%}.orb:after{content:'OHT';position:absolute;left:32%;top:42%;font:14px var(--mono);letter-spacing:.18em}.stamp{position:absolute;right:8%;bottom:8%;width:112px;height:112px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;font:10px var(--mono);text-transform:uppercase;transform:rotate(13deg)}
-    .statement{padding:78px 0 88px;display:grid;grid-template-columns:1fr 2fr;gap:40px;border-bottom:1px solid var(--line)}.statement h2{max-width:850px;margin:0;font-size:clamp(2.8rem,5.2vw,5.5rem);line-height:.96;letter-spacing:-.07em;font-weight:500}
-    .services{padding:72px 0 78px;background:var(--ink);color:var(--paper)}.services-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:42px}.services h2{font-size:clamp(3rem,5.6vw,6.2rem);line-height:.88;letter-spacing:-.075em;margin:12px 0 0;font-weight:500}.services-intro{max-width:290px;line-height:1.5;color:#bab9af;margin:0}.service-list{border-top:1px solid #474741}.service{display:grid;grid-template-columns:62px 1fr 1.1fr 30px;gap:20px;padding:21px 0;border-bottom:1px solid #474741;align-items:center}.service-num{color:var(--acid);font:12px var(--mono)}.service h3{margin:0;font-size:clamp(1.25rem,2vw,2rem);font-weight:500;letter-spacing:-.04em}.service p{margin:0;color:#aaa9a0;line-height:1.45;max-width:440px;font-size:15px}.arrow{color:var(--acid);font-size:25px;text-align:right}
-    .approach{padding:76px 0 82px}.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:start}.approach h2{margin:12px 0 28px;font-size:clamp(3rem,5.6vw,6rem);line-height:.88;letter-spacing:-.08em;font-weight:500}.approach-copy{padding-top:28px;max-width:450px;font-size:17px;line-height:1.5}.approach-copy p{margin:0 0 16px}.notes{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:58px}.note{padding:20px 25px 10px 0;border-bottom:1px solid var(--line)}.note:nth-child(odd){border-right:1px solid var(--line)}.note:nth-child(even){padding-left:25px}.note strong{display:block;font:11px var(--mono);text-transform:uppercase;margin-bottom:10px}.note span{font-size:16px}
-    .contact{background:var(--acid);padding:72px 0 82px}.contact-grid{display:grid;grid-template-columns:1fr minmax(320px,520px);gap:10%;align-items:start}.contact h2{margin:12px 0 20px;max-width:650px;font-size:clamp(3.2rem,6vw,6.8rem);line-height:.86;letter-spacing:-.085em;font-weight:500}.contact-copy{max-width:400px;font-size:16px;line-height:1.5;margin:0}.contact-form{display:grid;gap:0}.contact-form label{font:11px var(--mono);text-transform:uppercase;letter-spacing:.08em;margin:15px 0 5px}.contact-form input,.contact-form select,.contact-form textarea{width:100%;border:0;border-bottom:1px solid rgba(23,23,19,.5);background:transparent;padding:9px 0;color:var(--ink);font:15px var(--sans);border-radius:0;outline:none}.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-bottom:2px solid var(--ink)}.contact-form select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 8px) 50%,100% 50%;background-size:8px 8px;background-repeat:no-repeat}.contact-form textarea{min-height:76px;resize:vertical}.contact-form button{margin-top:24px;border:0;cursor:pointer;background:var(--ink);color:var(--paper);padding:16px 23px;font:11px var(--mono);text-transform:uppercase;letter-spacing:.07em;justify-self:start;transition:transform .2s,background .2s}.contact-form button:hover{transform:translate(4px,-4px);background:var(--orange)}.honeypot{position:absolute;left:-9999px}footer{background:var(--ink);color:var(--paper);padding:20px 0;font:10px var(--mono);text-transform:uppercase;letter-spacing:.07em}.footer-row{display:flex;justify-content:space-between;gap:20px}
-    @media(max-width:800px){.wrap{padding:0 20px}.topnav{display:none}.menu-btn{display:block}.hero{display:block}.hero-copy{padding:58px 0 72px}.hero-art{min-height:360px;margin:0 -20px}.orb{left:12%;top:13%}.statement,.approach-grid,.contact-grid{grid-template-columns:1fr;gap:28px}.statement{padding:58px 0 66px}.statement h2{font-size:clamp(2.7rem,12vw,5rem)}.services{padding:58px 0 64px}.services-head{display:block;margin-bottom:32px}.services-intro{margin-top:23px}.service{grid-template-columns:32px 1fr 25px;gap:8px;padding:19px 0}.service p{grid-column:2/3;font-size:14px;margin-top:3px}.arrow{grid-column:3;grid-row:1}.approach{padding:60px 0 65px}.approach-copy{padding-top:0}.notes{margin-top:38px}.contact{padding:60px 0 68px}.contact h2{font-size:clamp(3.2rem,13vw,6rem)}.contact-form{margin-top:5px}.footer-row{display:block;line-height:2}}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1340px;margin:0 auto;padding:0 5.2%}
+    
+    /* Header */
+    .topbar{display:flex;justify-content:space-between;align-items:center;height:59px;border-bottom:1px solid var(--line)}
+    .logo{font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:8px}
+    .logo-mark{background:var(--acid);width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:4px}
+    .topnav{display:flex;gap:40px}
+    .topnav a{font-size:.95rem;transition:color .2s}
+    .topnav a:hover{color:var(--muted)}
+    .menu-btn{display:none;background:none;border:none;cursor:pointer;font-size:1.5rem}
+    
+    /* Hero */
+    .hero{min-height:calc(100vh - 59px);display:grid;grid-template-columns:1.06fr .94fr;border-bottom:1px solid var(--line);align-items:center}
+    .hero-copy{position:relative;padding:clamp(58px,7vw,100px) 0}
+    .kicker{font-size:.9rem;color:var(--muted);font-weight:500;margin-bottom:28px;text-transform:uppercase;letter-spacing:.8px}
+    .hero h1{margin:0;font-size:clamp(2.8rem,6vw,5.5rem);line-height:.95;font-family:var(--serif);font-weight:600;margin-bottom:24px}
+    .hero h1 em{font-style:italic;color:var(--orange)}
+    .hero p{margin:0;font-size:1.1rem;line-height:1.6;color:var(--muted);max-width:500px}
+    .hero-art{position:relative;min-height:500px}
+    .orb{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--acid),transparent);opacity:.6;right:0;top:20%}
+    
+    /* Statement */
+    .statement{padding:78px 0 88px;display:grid;grid-template-columns:1fr 2fr;gap:40px;border-bottom:1px solid var(--line);align-items:start}
+    .label{font-size:.9rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.8px;margin-bottom:24px}
+    .statement h2{max-width:850px;margin:0;font-size:clamp(2.8rem,5.2vw,5.5rem);line-height:.95;font-family:var(--serif);font-weight:600}
+    .statement h2 em{font-style:italic;color:var(--orange)}
+    
+    /* Services */
+    .services{padding:72px 0 78px;background:var(--ink);color:var(--paper)}
+    .services-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:42px;gap:40px}
+    .services h2{font-size:clamp(3rem,5.6vw,6rem);line-height:.88;font-family:var(--serif);font-weight:600;margin:0}
+    .services h2 em{font-style:italic;color:var(--acid)}
+    .services-desc{font-size:.95rem;line-height:1.7;color:rgba(245,242,234,.75);max-width:380px}
+    .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+    .service-item{padding:32px;border:1px solid rgba(245,242,234,.2);border-radius:6px}
+    .service-item h3{margin:0 0 12px;font-size:1.3rem;font-weight:600}
+    .service-item p{margin:0;font-size:.95rem;line-height:1.7;color:rgba(245,242,234,.75)}
+    
+    /* Approach */
+    .approach{padding:76px 0 82px}
+    .approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:start}
+    .approach h2{margin:0 0 28px;font-size:clamp(3rem,5.6vw,6rem);line-height:.88;font-family:var(--serif);font-weight:600}
+    .approach h2 em{font-style:italic;color:var(--orange)}
+    .approach-copy{display:flex;flex-direction:column;gap:24px}
+    .approach-copy p{margin:0;font-size:1rem;line-height:1.7;color:var(--muted)}
+    
+    /* Contact */
+    .contact{background:var(--acid);padding:72px 0 82px}
+    .contact-grid{display:grid;grid-template-columns:1fr minmax(320px,520px);gap:10%;align-items:start}
+    .contact h2{margin:0 0 20px;max-width:650px;font-size:clamp(2.8rem,5.2vw,5.5rem);line-height:.95;font-family:var(--serif);font-weight:600;color:var(--ink)}
+    .contact h2 em{font-style:italic;color:var(--orange)}
+    .contact p{margin:0 0 28px;font-size:.95rem;line-height:1.7;color:rgba(23,23,19,.7);max-width:420px}
+    .contact-form{display:flex;flex-direction:column;gap:16px}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-group label{font-size:.85rem;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:.5px}
+    .form-group input,.form-group textarea{padding:12px 16px;border:1px solid rgba(23,23,19,.2);border-radius:4px;font-family:var(--sans);font-size:.95rem;background:rgba(255,255,255,.5);color:var(--ink)}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--ink);background:white}
+    .form-group textarea{resize:vertical;min-height:100px}
+    .submit-btn{padding:14px 32px;background:var(--ink);color:var(--paper);border:none;border-radius:4px;font-weight:600;font-size:.95rem;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;transition:background .2s}
+    .submit-btn:hover{background:var(--muted)}
+    
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:32px 0}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--muted)}
+    
+    @media(max-width:800px){
+      .wrap{padding:0 20px}
+      .topnav{display:none}
+      .menu-btn{display:block}
+      .hero{display:block}
+      .hero-copy{padding:58px 0 72px}
+      .hero-art{min-height:360px;margin:0 -20px}
+      .orb{left:12%;right:auto;width:240px;height:240px}
+      .statement{grid-template-columns:1fr;gap:20px}
+      .services-grid{grid-template-columns:1fr}
+      .approach-grid{grid-template-columns:1fr;gap:20px}
+      .contact-grid{grid-template-columns:1fr;gap:20px}
+      .footer-row{flex-direction:column;gap:12px;text-align:center}
+    }
   </style>
 </head>
 <body>
-  <header class="wrap topbar"><a class="logo" href="#top"><span class="logo-mark">O</span> Oxbridge HT</a><nav class="topnav"><a href="#services">What we do</a><a href="#approach">Our approach</a><a href="#contact">Get in touch</a></nav><button class="menu-btn" aria-label="Open menu">Menu +</button></header>
+  <header class="wrap topbar">
+    <a class="logo" href="#top">
+      <span class="logo-mark">O</span> Oxbridge HT
+    </a>
+    <nav class="topnav">
+      <a href="#services">What we do</a>
+      <a href="#approach">Our approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn">☰</button>
+  </header>
+
   <main id="top">
-    <section class="wrap hero"><div class="hero-copy"><div class="kicker">Healthtech strategy / acceleration / access</div><h1>Better health.<br><em>Built to scale.</em></h1><p>Oxbridge HT helps ambitious healthtech teams turn bold ideas into products, partnerships and progress that reaches people.</p><div class="scroll">↓ Scroll to explore</div></div><div class="hero-art" aria-label="Abstract illustration representing connected healthtech ecosystems"><div class="orb"></div><div class="stamp">Health<br>innovation<br>in motion</div></div></section>
-    <section class="wrap statement" id="approach"><div class="label">01 — The big picture</div><h2>We bridge the gap between <em>great science</em> and meaningful market impact.</h2></section>
-    <section class="services" id="services"><div class="wrap"><div class="services-head"><div><div class="label">02 — What we do</div><h2>From insight<br>to <em>impact.</em></h2></div><p class="services-intro">One connected partner for the decisions, relationships and momentum required to grow in healthtech.</p></div><div class="service-list"><article class="service"><div class="service-num">01</div><h3>Strategy & positioning</h3><p>Clarify your opportunity, sharpen your story and build a roadmap that makes the next move obvious.</p><div class="arrow">↗</div></article><article class="service"><div class="service-num">02</div><h3>Acceleration programmes</h3><p>Hands-on support that moves teams from early validation to confident, investable growth.</p><div class="arrow">↗</div></article><article class="service"><div class="service-num">03</div><h3>Capital & partnerships</h3><p>Build the right relationships with investors, operators, institutions and ecosystem partners.</p><div class="arrow">↗</div></article><article class="service"><div class="service-num">04</div><h3>Market access</h3><p>Navigate new markets, create local relevance and make launch a repeatable advantage.</p><div class="arrow">↗</div></article></div></div></section>
-    <section class="wrap approach"><div class="approach-grid"><div><div class="label">03 — Why Oxbridge HT</div><h2>Different<br>by <em>design.</em></h2></div><div class="approach-copy"><p>Healthtech does not grow in a straight line. It grows through the right mix of evidence, empathy, commercial thinking and trusted connections.</p><p>We bring those pieces together — with the curiosity to see around corners and the practical focus to make things happen.</p></div></div><div class="notes"><div class="note"><strong>01 / Connected thinking</strong><span>Science, business and society in the same conversation.</span></div><div class="note"><strong>02 / Practical momentum</strong><span>Clear decisions, useful work and progress you can feel.</span></div><div class="note"><strong>03 / Global perspective</strong><span>Local insight with a view to the wider opportunity.</span></div><div class="note"><strong>04 / Human partnership</strong><span>Senior attention when the stakes are high.</span></div></div></section>
-    <section class="contact" id="contact"><div class="wrap contact-grid"><div><div class="label">04 — Contact</div><h2>Let’s move the right healthtech ideas <em>further, faster.</em></h2><p class="contact-copy">Tell us a little about your work and what you would like to explore. We will be in touch to discuss the next pathway forward.</p></div><form class="contact-form" action="https://formsubmit.co/hello@oxbridgeht.com" method="POST"><input type="hidden" name="_subject" value="New Oxbridge HT enquiry"><input type="hidden" name="_captcha" value="false"><input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><label for="organisation">Organisation</label><input id="organisation" name="organisation" type="text" autocomplete="organization"><label for="interest">I’m interested in</label><select id="interest" name="interest" required><option value="" selected disabled>Please select</option><option>Strategy & positioning</option><option>Acceleration programmes</option><option>Capital & partnerships</option><option>Market access</option><option>Something else</option></select><label for="message">How can we help?</label><textarea id="message" name="message" required></textarea><button type="submit">Send enquiry&nbsp; ↗</button></form></div></section>
+    <!-- Hero Section -->
+    <section class="wrap hero">
+      <div class="hero-copy">
+        <div class="kicker">Healthtech strategy / acceleration / access</div>
+        <h1>Better health.<br><em>Built to scale.</em></h1>
+        <p>Oxbridge HT helps ambitious healthtech teams move from promising idea to meaningful market impact.</p>
+      </div>
+      <div class="hero-art">
+        <div class="orb"></div>
+      </div>
+    </section>
+
+    <!-- Statement Section -->
+    <section class="wrap statement" id="approach">
+      <div class="label">01 — The big picture</div>
+      <h2>We bridge the gap between <em>great science</em> and meaningful market impact.</h2>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="services-head">
+          <div>
+            <div class="label">02 — What we do</div>
+            <h2>From insight<br>to <em>impact.</em></h2>
+          </div>
+          <p class="services-desc">We work with founders and innovation teams across the health and life sciences ecosystem.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-item">
+            <h3>Strategy</h3>
+            <p>Navigate complex health systems and identify pathways to market with clarity and confidence.</p>
+          </div>
+          <div class="service-item">
+            <h3>Acceleration</h3>
+            <p>Scale from proof of concept to commercial impact with the right partnerships and expertise.</p>
+          </div>
+          <div class="service-item">
+            <h3>Access</h3>
+            <p>Unlock doors to NHS, private health, and enterprise partnerships that drive adoption.</p>
+          </div>
+          <div class="service-item">
+            <h3>Fundraising</h3>
+            <p>Secure funding from health-focused investors who understand your market and mission.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="wrap approach">
+      <div class="approach-grid">
+        <div>
+          <div class="label">03 — Why Oxbridge HT</div>
+          <h2>Different<br>by <em>design.</em></h2>
+        </div>
+        <div class="approach-copy">
+          <p>Healthtech is complex. It requires deep domain expertise, strategic thinking, and operational excellence.</p>
+          <p>We've built an operating system that brings these together—combining strategy, execution, and access to accelerate your impact.</p>
+          <p>Whether you're scaling a digital health platform, launching a medtech device, or building enterprise health infrastructure, we help you move faster with fewer mistakes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="label">04 — Contact</div>
+          <h2>Let's move the right healthtech ideas <em>further, faster.</em></h2>
+          <p>Get in touch with our team to discuss your vision, explore partnership opportunities, or learn how we can accelerate your healthtech journey.</p>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/mnpnzlrl" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
   </main>
-  <footer><div class="wrap footer-row"><span>© 2026 Oxbridge HT</span><span>Healthtech, accelerated — London · Global</span></div></footer>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 Oxbridge HT</span>
+      <span>Healthtech, accelerated — London · Global</span>
+    </div>
+  </footer>
 </body>
 </html>
